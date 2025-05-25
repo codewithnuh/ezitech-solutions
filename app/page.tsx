@@ -6,7 +6,7 @@ import Work from "@/components/screens/home/Work";
 
 export default function Home() {
   return (
-    <main>
+    <main className="overflow-hidden">
       <Hero />
       <About />
       <Testimonials />

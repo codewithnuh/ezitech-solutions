@@ -70,7 +70,7 @@ const Services = () => {
             return (
               <article
                 key={index}
-                className="group p-6 rounded-lg shadow-md bg-white text-gray-800
+                className="group p-6 rounded-lg shadow-md border border-gray-300 bg-white text-gray-800
                            flex flex-col items-center text-center transition-all duration-300 ease-in-out
                            hover:bg-secondary hover:text-white"
                 aria-labelledby={`service-title-${index}`}

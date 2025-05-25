@@ -17,23 +17,25 @@ const Testimonials = () => {
           What People Say?
         </h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1  py-10 md:grid-cols-2 lg:grid-cols-3  sm:gap-3">
           {TESTIMONIALS.map((testimonial, index) => (
-            <article
-              key={index}
-              className="relative hover:bg-secondary group bg-white p-6 pb-16 rounded-lg shadow-md flex flex-col items-start text-left
+            <div className="relative mb-10 " key={index}>
+              <article
+                key={index}
+                className="relative border h-60 px-6 bg-white border-gray-400 border-b-0  hover:bg-secondary group  p-8 pb-16 rounded-lg  flex flex-col items-start text-left
                          "
-              aria-label={`Testimonial from ${testimonial.name}`}
-            >
-              <p className="text-gray-700 group-hover:text-white text-base sm:text-lg leading-relaxed mb-8">
-                {testimonial.quote}
-              </p>
-              <div className="absolute bottom-6 left-6 flex items-center">
+                aria-label={`Testimonial from ${testimonial.name}`}
+              >
+                <p className="text-gray-700 group-hover:text-white text-base sm:text-lg leading-relaxed mb-8">
+                  {testimonial.quote}
+                </p>
+              </article>
+              <div className="absolute p-2 -bottom-10 w-[75%] left-10 flex bg-white ml-2 items-center">
                 <Image
                   src={testimonial.avatar}
                   alt={`Avatar of ${testimonial.name}`}
-                  width={60}
-                  height={60}
+                  width={50}
+                  height={50}
                   className="rounded-full h-full object-cover mr-4"
                   sizes="60px"
                 />
@@ -46,7 +48,7 @@ const Testimonials = () => {
                   </p>
                 </div>
               </div>
-            </article>
+            </div>
           ))}
         </div>
       </div>

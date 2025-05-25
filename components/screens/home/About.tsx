@@ -28,23 +28,26 @@ const About = () => {
         </div>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-0 container mx-auto px-4p">
-        <div className="bg-secondary flex justify-center items-center py-7 sm:py-10 lg:py-14 order-2 md:order-1">
-          <div className="px-4 sm:px-6 lg:px-8 container">
-            <Image
-              src="/assets/about.jpg"
-              width={500}
-              height={500}
-              alt="A diverse team of professionals collaboratively working on a software development project, showing teamwork and innovation."
-              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 500px"
-              loading="lazy"
-              className="w-full h-auto object-cover rounded-lg shadow-lg"
-            />
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-0 px-4p">
+        <div className="bg-secondary relative">
+          <div className="h-full w-28 bg-white absolute left-126" />
+          <div className=" container relative z-10 px-4 mx-auto flex justify-center items-center py-7 sm:py-10 lg:py-14 order-2 md:order-1">
+            <div className="px-4 sm:px-6 lg:px-8 ">
+              <Image
+                src="/assets/about.jpg"
+                width={500}
+                height={500}
+                alt="A diverse team of professionals collaboratively working on a software development project, showing teamwork and innovation."
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 500px"
+                loading="lazy"
+                className="w-full h-auto object-cover rounded-lg shadow-lg"
+              />
+            </div>
           </div>
         </div>
 
         <div className="flex justify-center items-center py-8 sm:py-10 lg:py-14 order-1 md:order-2">
-          <div className="container mx-auto text-left flex flex-col items-start justify-center px-4 sm:px-6 lg:px-8">
+          <div className="container mx-auto  text-left flex flex-col items-start justify-center px-4 sm:px-6 lg:px-8">
             <h3
               id="about-heading"
               className="text-2xl sm:text-3xl font-semibold text-secondary mb-4 sm:mb-6 leading-tight"
