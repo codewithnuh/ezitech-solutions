@@ -28,9 +28,9 @@ const About = () => {
         </div>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-0">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-0 container mx-auto px-4p">
         <div className="bg-secondary flex justify-center items-center py-7 sm:py-10 lg:py-14 order-2 md:order-1">
-          <div className="px-4 sm:px-6 lg:px-8">
+          <div className="px-4 sm:px-6 lg:px-8 container">
             <Image
               src="/assets/about.jpg"
               width={500}

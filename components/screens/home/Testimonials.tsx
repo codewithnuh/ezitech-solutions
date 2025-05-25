@@ -21,13 +21,11 @@ const Testimonials = () => {
           {TESTIMONIALS.map((testimonial, index) => (
             <article
               key={index}
-              className="relative bg-white p-6 pb-16 rounded-lg shadow-md flex flex-col items-start text-left
-                         before:content-[''] before:absolute before:bottom-0 before:left-1/2 before:-translate-x-1/2
-                         before:w-0 before:h-0 before:border-l-[15px] before:border-r-[15px] before:border-t-[15px]
-                         before:border-l-transparent before:border-r-transparent before:border-t-white before:translate-y-[15px]"
+              className="relative hover:bg-secondary group bg-white p-6 pb-16 rounded-lg shadow-md flex flex-col items-start text-left
+                         "
               aria-label={`Testimonial from ${testimonial.name}`}
             >
-              <p className="text-gray-700 text-base sm:text-lg leading-relaxed mb-8">
+              <p className="text-gray-700 group-hover:text-white text-base sm:text-lg leading-relaxed mb-8">
                 {testimonial.quote}
               </p>
               <div className="absolute bottom-6 left-6 flex items-center">
@@ -40,10 +38,12 @@ const Testimonials = () => {
                   sizes="60px"
                 />
                 <div>
-                  <h3 className="text-lg font-semibold text-gray-800">
+                  <h3 className="text-lg group-hover:text-white font-semibold text-gray-800">
                     {testimonial.name}
                   </h3>
-                  <p className="text-sm text-gray-600">{testimonial.title}</p>
+                  <p className="text-sm group-hover:text-white text-gray-600">
+                    {testimonial.title}
+                  </p>
                 </div>
               </div>
             </article>

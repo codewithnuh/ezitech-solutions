@@ -6,7 +6,7 @@ const Hero = () => {
   return (
     <section
       id="home"
-      className="relative bg-[url('/assets/banner.jpg')] bg-cover bg-center min-h-[60vh] sm:min-h-[70vh] md:min-h-[80vh] flex items-center justify-center" //
+      className="relative bg-[url('/assets/banner.jpg')] bg-cover bg-center min-h-[60vh] sm:min-h-[70vh] md:min-h-[80vh] flex items-center justify-center pt-10" //
     >
       <div className="absolute inset-0 bg-black/60"></div>{" "}
       <div className="relative z-10 container mx-auto px-4 py-20 space-y-5 text-center">
