@@ -68,6 +68,13 @@ export const StaggeredReveal = ({
   yOffset = 20,
   itemDuration = 0.6,
   className = "",
+}: {
+  children: React.ReactNode;
+  delayChildren?: number;
+  staggerDuration?: number;
+  yOffset?: number;
+  itemDuration?: number;
+  className?: string;
 }) => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, amount: 0.1 }); // amount: 0.1 means 10% of the container must be visible
