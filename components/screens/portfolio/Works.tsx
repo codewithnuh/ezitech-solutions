@@ -106,7 +106,7 @@ const Works = () => {
                 {/* mt-auto pushes button to bottom */}
                 <Button
                   variant="default"
-                  className="bg-red-500 hover:bg-red-600 text-white transition-colors duration-300"
+                  className=" text-white transition-colors duration-300"
                 >
                   Know More
                 </Button>
