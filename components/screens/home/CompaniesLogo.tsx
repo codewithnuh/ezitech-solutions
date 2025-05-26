@@ -49,7 +49,7 @@ const EXTENDED_COMPANY_LOGOS = [
   ...COMPANY_LOGOS,
 ];
 
-const Work = () => {
+const CompaniesLogo = () => {
   // Initialize the Autoplay plugin with desired options
   // stopOnMouseEnter: true will pause autoplay on hover
   const autoplayPlugin = React.useRef(
@@ -113,4 +113,4 @@ const Work = () => {
   );
 };
 
-export default Work;
+export default CompaniesLogo;

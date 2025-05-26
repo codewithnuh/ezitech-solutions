@@ -3,11 +3,36 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import React from "react";
 import { Button } from "@/components/ui/button";
+
 interface HeroProps {
   backgroundImage: string;
 }
+
 const Hero: React.FC<HeroProps> = ({ backgroundImage }) => {
   const pathname = usePathname();
+
+  // Function to get the display name for the current path
+  const getPageDisplayName = (path: string) => {
+    switch (path) {
+      case "/about":
+        return "About Us";
+      case "/portfolio":
+        return "Portfolio";
+      case "/services":
+        return "Services"; // Added for completeness, assuming you might have a services page
+      case "/contact":
+        return "Contact Us"; // Added for completeness
+      case "/team":
+        return "Our Team"; // Added for completeness
+      case "/gallery":
+        return "Gallery"; // Added for completeness
+      default:
+        return "Home";
+    }
+  };
+
+  const currentDisplayName = getPageDisplayName(pathname);
+
   return (
     <section id="home">
       <div
@@ -15,16 +40,26 @@ const Hero: React.FC<HeroProps> = ({ backgroundImage }) => {
         style={{ backgroundImage: `url(${backgroundImage})` }}
       >
         <div className="absolute inset-0 bg-black/80"></div>
-        {/* Optional: Add content inside */}
+        {/* Content inside */}
         <div className="text-center relative z-10 ">
-          <h1 className="text-4xl sm:text-5xl text-white  font-bold">
-            {pathname == "/about" ? "About Us" : "Home"}
+          <h1 className="text-4xl sm:text-5xl text-white font-bold">
+            {currentDisplayName}
           </h1>
-          <div className="text-white mt-4">
-            <Link href={"/"}>Home</Link> /
-            <Link href={pathname}>
-              {pathname === "/about" ? "About Us" : "Home"}
-            </Link>
+          <div className="text-white mt-4 text-lg">
+            {" "}
+            {/* Increased text size for breadcrumb */}
+            <Link href="/" className="hover:underline">
+              Home
+            </Link>{" "}
+            /{" "}
+            {pathname !== "/" && ( // Only show current page link if not on home
+              <Link href={pathname} className="hover:underline">
+                {currentDisplayName}
+              </Link>
+            )}
+            {pathname === "/" && ( // If on home, just show Home
+              <span>{currentDisplayName}</span>
+            )}
           </div>
         </div>
       </div>

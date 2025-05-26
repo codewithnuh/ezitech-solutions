@@ -22,11 +22,11 @@ const Testimonials = () => {
             <div className="relative mb-10 " key={index}>
               <article
                 key={index}
-                className="relative border h-60 px-6 bg-white border-gray-400 border-b-0  hover:bg-secondary group  p-8 pb-16 rounded-lg  flex flex-col items-start text-left
+                className="relative border h-60 px-6 bg-white border-gray-400 border-b-0  hover:bg-secondary group transition-all duration-500 ease-in-out  p-8 pb-16 rounded-lg  flex flex-col items-start text-left
                          "
                 aria-label={`Testimonial from ${testimonial.name}`}
               >
-                <p className="text-gray-700  group-hover:text-white text-base sm:text-lg leading-relaxed mb-8">
+                <p className="text-secondary  group-hover:text-white text-base sm:text-lg leading-relaxed mb-8">
                   {testimonial.quote}
                 </p>
               </article>

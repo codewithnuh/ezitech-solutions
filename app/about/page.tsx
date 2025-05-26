@@ -1,13 +1,13 @@
 import Gallery from "@/components/screens/about/Gallery";
 import Team from "@/components/screens/about/Team";
-import Work from "@/components/screens/home/Work";
+import Work from "@/components/screens/home/CompaniesLogo";
 import Hero from "@/components/shared/Hero";
 import SplitSection from "@/components/shared/SplitSection";
 import React from "react";
 
 const page = () => {
   return (
-    <div>
+    <main>
       <Hero backgroundImage="/assets/about-page.jpg" />
       <SplitSection
         imageSrc="/assets/about2.jpg"
@@ -18,7 +18,7 @@ const page = () => {
       <Gallery />
       <Team />
       <Work />
-    </div>
+    </main>
   );
 };
 
