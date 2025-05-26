@@ -9,6 +9,7 @@ import { ThemeProvider } from "@/components/theme-provider";
 const oswald = Oswald({
   weight: ["200", "400", "500", "600", "700"],
   variable: "--font-oswald",
+  subsets: ["cyrillic"],
 });
 export const metadata: Metadata = {
   title: "Ezitech Solutions",
