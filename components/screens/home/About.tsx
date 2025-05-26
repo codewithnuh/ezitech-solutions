@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { ABOUT_CONTENT } from "@/constants/content/about";
-import Image from "next/image";
+
 import React from "react";
 import Link from "next/link";
 import SplitSection from "@/components/shared/SplitSection";

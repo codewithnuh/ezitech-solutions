@@ -18,12 +18,12 @@ const Hero: React.FC<HeroProps> = ({ backgroundImage }) => {
         return "About Us";
       case "/portfolio":
         return "Portfolio";
-      case "/services":
-        return "Services"; // Added for completeness, assuming you might have a services page
+      case "/blog":
+        return "Blog"; // Added for completeness, assuming you might have a services page
       case "/contact":
         return "Contact Us"; // Added for completeness
-      case "/team":
-        return "Our Team"; // Added for completeness
+      case "/career":
+        return "career"; // Added for completeness
       case "/gallery":
         return "Gallery"; // Added for completeness
       default:

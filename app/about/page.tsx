@@ -3,8 +3,12 @@ import Team from "@/components/screens/about/Team";
 import Work from "@/components/screens/home/CompaniesLogo";
 import Hero from "@/components/shared/Hero";
 import SplitSection from "@/components/shared/SplitSection";
+import { Metadata } from "next";
 import React from "react";
-
+export const metadata: Metadata = {
+  title: "About",
+  description: "We build solutions that solve your problems",
+};
 const page = () => {
   return (
     <main>
