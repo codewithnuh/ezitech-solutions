@@ -26,11 +26,11 @@ const Testimonials = () => {
                          "
                 aria-label={`Testimonial from ${testimonial.name}`}
               >
-                <p className="text-gray-700 group-hover:text-white text-base sm:text-lg leading-relaxed mb-8">
+                <p className="text-gray-700  group-hover:text-white text-base sm:text-lg leading-relaxed mb-8">
                   {testimonial.quote}
                 </p>
               </article>
-              <div className="absolute p-2 -bottom-10 w-[75%] left-10 flex bg-white ml-2 items-center">
+              <div className="absolute p-2 rounded-md -bottom-10 w-[75%] left-10 flex bg-white ml-2 items-center">
                 <Image
                   src={testimonial.avatar}
                   alt={`Avatar of ${testimonial.name}`}

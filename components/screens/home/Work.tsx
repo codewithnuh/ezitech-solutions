@@ -66,7 +66,7 @@ const Work = () => {
         <div className="px-4 sm:px-6 lg:px-8">
           <h2
             id="partners-heading"
-            className="text-3xl sm:text-4xl font-bold text-center text-gray-800 mb-10 sm:mb-14"
+            className="text-3xl sm:text-4xl font-bold text-center text-secondary mb-10 sm:mb-14"
           >
             We work with
           </h2>

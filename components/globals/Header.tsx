@@ -62,7 +62,7 @@ const Header = () => {
               sizes="(max-width: 768px) 50px, 50px"
               priority
             />
-            <span className="sr-only">Ezitech Solutions</span>
+            <span className="font-bold text-lg ml-2">Ezitech Solutions</span>
           </Link>
 
           <ul className="hidden sm:flex space-x-4" role="list">
