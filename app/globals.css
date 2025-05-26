@@ -118,6 +118,6 @@
   }
   body {
     @apply bg-background text-foreground;
-    font-family: var(--font-poppins);
+    font-family: var(--font-oswald);
   }
 }

@@ -17,14 +17,9 @@ const About = () => {
             >
               Looking for a First-Class PHP Developer?
             </h2>
-            <Link href="/contact" passHref>
-              <Button
-                variant="secondary"
-                className="text-white hover:bg-secondary-dark transition-colors duration-200"
-              >
-                Get A Quote
-              </Button>
-            </Link>
+            <Button variant="secondary" asChild className="text-white">
+              <Link href="/contact">Get A Quote</Link>
+            </Button>
           </div>
         </div>
       </div>
