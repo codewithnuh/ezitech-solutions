@@ -91,6 +91,7 @@ const Contact = () => {
                 <Input
                   type="text"
                   id="name"
+                  placeholder="Enter Name"
                   {...register("name")}
                   className="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-primary focus:border-primary sm:text-sm"
                   aria-invalid={errors.name ? "true" : "false"}
@@ -114,6 +115,7 @@ const Contact = () => {
                 <Input
                   type="email"
                   id="email"
+                  placeholder="Enter Email"
                   {...register("email")}
                   className="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-primary focus:border-primary sm:text-sm"
                   aria-invalid={errors.email ? "true" : "false"}
@@ -137,8 +139,9 @@ const Contact = () => {
                 <Input
                   type="text"
                   id="subject"
+                  placeholder="Enter Your Subject Here"
                   {...register("subject")}
-                  className="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-primary focus:border-primary sm:text-sm"
+                  className="mt-1 block text-white w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-primary focus:border-primary sm:text-sm"
                   aria-invalid={errors.subject ? "true" : "false"}
                   aria-describedby={
                     errors.subject ? "subject-error" : undefined
@@ -160,6 +163,7 @@ const Contact = () => {
                   Message
                 </label>
                 <Textarea
+                  placeholder="Write your message here"
                   id="message"
                   rows={5}
                   {...register("message")}

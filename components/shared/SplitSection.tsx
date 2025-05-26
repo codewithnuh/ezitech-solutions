@@ -4,6 +4,7 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
+import { FadeInWhenVisible } from "@/components/shared/Motion"; // Import the reusable animation component
 
 interface SplitSectionProps {
   imageSrc: string;
@@ -32,18 +33,23 @@ const SplitSection: React.FC<SplitSectionProps> = ({
           reverse ? "order-2 md:order-2" : "order-1 md:order-1"
         }`}
       >
+        {/* The decorative white div is likely a design element, keeping it for visual consistency */}
         <div className="h-full w-28 bg-white absolute left-126" />
         <div className="container relative z-10 px-4 mx-auto flex justify-center items-center py-7 sm:py-10 lg:py-14">
           <div className="px-4 sm:px-6 lg:px-8">
-            <Image
-              src={imageSrc}
-              width={500}
-              height={500}
-              alt={imageAlt}
-              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 500px"
-              loading="lazy"
-              className="w-full h-auto object-cover rounded-lg shadow-lg"
-            />
+            <FadeInWhenVisible delay={0.2} yOffset={50}>
+              {" "}
+              {/* Animate the image */}
+              <Image
+                src={imageSrc}
+                width={500}
+                height={500}
+                alt={imageAlt}
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 500px"
+                loading="lazy"
+                className="w-full h-auto object-cover rounded-lg shadow-lg"
+              />
+            </FadeInWhenVisible>
           </div>
         </div>
       </div>
@@ -55,22 +61,40 @@ const SplitSection: React.FC<SplitSectionProps> = ({
         }`}
       >
         <div className="container mx-auto text-left flex flex-col items-start justify-center px-4 sm:px-6 lg:px-8">
-          <h3 className="text-2xl sm:text-3xl font-semibold text-secondary mb-4 sm:mb-6 leading-tight">
-            {title}
-          </h3>
+          <FadeInWhenVisible delay={0.3} yOffset={30}>
+            {" "}
+            {/* Animate the title */}
+            <h3 className="text-2xl sm:text-3xl font-semibold text-secondary mb-4 sm:mb-6 leading-tight">
+              {title}
+            </h3>
+          </FadeInWhenVisible>
 
-          <p className="text-gray-700 text-base sm:text-lg mb-4 leading-relaxed">
-            {paragraph.slice(0, 180)}
-          </p>
-          <p className="text-gray-700 text-base sm:text-lg mb-6 leading-relaxed">
-            {paragraph.slice(180)}
-          </p>
+          <FadeInWhenVisible delay={0.4} yOffset={30}>
+            {" "}
+            {/* Animate the first paragraph */}
+            <p className="text-gray-700 text-base sm:text-lg mb-4 leading-relaxed">
+              {paragraph.slice(0, 180)}
+            </p>
+          </FadeInWhenVisible>
+
+          <FadeInWhenVisible delay={0.5} yOffset={30}>
+            {" "}
+            {/* Animate the second paragraph */}
+            <p className="text-gray-700 text-base sm:text-lg mb-6 leading-relaxed">
+              {paragraph.slice(180)}
+            </p>
+          </FadeInWhenVisible>
+
           {ctaLink || ctaText ? (
-            <Link href={ctaLink as string} passHref>
-              <Button className="w-full sm:w-auto px-6 py-3 text-lg font-medium">
-                {ctaText}
-              </Button>
-            </Link>
+            <FadeInWhenVisible delay={0.6} yOffset={30}>
+              {" "}
+              {/* Animate the CTA button */}
+              <Link href={ctaLink as string} passHref>
+                <Button className="w-full sm:w-auto px-6 py-3 text-lg font-medium">
+                  {ctaText}
+                </Button>
+              </Link>
+            </FadeInWhenVisible>
           ) : null}
         </div>
       </div>

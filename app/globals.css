@@ -120,4 +120,8 @@
     @apply bg-background text-foreground;
     font-family: var(--font-oswald);
   }
+  code,
+  pre {
+    @apply bg-black! p-5;
+  }
 }

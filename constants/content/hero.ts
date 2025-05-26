@@ -1,6 +1,6 @@
 export const HERO_CONTENT = {
-  title: "The development of technological solutions is our forte",
+  title: "Transform Your Business with Strategic Technology Development",
   subTitle:
-    "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Veritatis dicta, quos consequatur doloremque architecto debitis nobis doloribus. Deserunt pariatur voluptatibus nihil modi. Excepturi!",
-  cta: "Explore Us",
+    "Facing complex tech challenges? We provide robust, scalable solutions engineered to optimize your operations and secure your competitive edge.",
+  cta: "Request a Consultation",
 };

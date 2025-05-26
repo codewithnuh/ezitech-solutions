@@ -1,12 +1,14 @@
+"use client";
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Facebook, Twitter, Linkedin, Mail, Globe } from "lucide-react"; // Import necessary Lucide icons
+import { FadeInWhenVisible, StaggeredReveal } from "@/components/shared/Motion"; // Import the reusable animation components
 
 // Mock data for team members
 const TEAM_MEMBERS = [
   {
-    image: "/assets/team-member-1.jpg", // Placeholder for Randy Vain
+    image: "/assets/team-member-1.jpg", // Original path restored
     alt: "Randy Vain, a man with short brown hair and a beard, wearing a light-colored shirt.",
     name: "Randy Vain",
     title: "Web Developer",
@@ -30,7 +32,7 @@ const TEAM_MEMBERS = [
     ],
   },
   {
-    image: "/assets/team-member-2.jpg", // Placeholder for Atap Hasly
+    image: "/assets/team-member-2.jpg", // Original path restored
     alt: "Atap Hasly, a man with short dark hair and a friendly smile.",
     name: "Atap Hasly",
     title: "Digital Marketer",
@@ -54,7 +56,7 @@ const TEAM_MEMBERS = [
     ],
   },
   {
-    image: "/assets/team-member-3.jpg", // Placeholder for Lord Hasan
+    image: "/assets/team-member-3.jpg", // Original path restored
     alt: "Lord Hasan, a man with short dark hair and a light beard, looking confidently.",
     name: "Lord Hasan",
     title: "Web Developer",
@@ -78,7 +80,7 @@ const TEAM_MEMBERS = [
     ],
   },
   {
-    image: "/assets/team-member-3.jpg", // Placeholder for Marry Cess
+    image: "/assets/team-member-3.jpg", // Original path restored (assuming it's a placeholder for Marry Cess)
     alt: "Marry Cess, a woman with long red hair, looking directly at the camera.",
     name: "Marry Cess",
     title: "Web Designer",
@@ -102,7 +104,7 @@ const TEAM_MEMBERS = [
     ],
   },
   {
-    image: "/assets/team-member-4.jpg", // Placeholder for Julio Froster
+    image: "/assets/team-member-4.jpg", // Original path restored
     alt: "Julio Froster, a person with short dark hair and a serious expression, with blue lighting.",
     name: "Julio Froster",
     title: "Web Developer",
@@ -126,7 +128,7 @@ const TEAM_MEMBERS = [
     ],
   },
   {
-    image: "/assets/team-member-5.jpg", // Placeholder for Jemmi Nitin
+    image: "/assets/team-member-5.jpg", // Original path restored
     alt: "Jemmi Nitin, a woman with long dark hair, looking thoughtfully.",
     name: "Jemmi Nitin",
     title: "Web Developer",
@@ -159,14 +161,18 @@ const Team = () => {
       className="py-12 sm:py-16 lg:py-20 bg-white"
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <h2
-          id="team-heading"
-          className="text-3xl sm:text-4xl font-bold text-center text-secondary mb-10 sm:mb-14"
-        >
-          Meet Our Team
-        </h2>
+        {/* Animate the heading */}
+        <FadeInWhenVisible delay={0.1} yOffset={30}>
+          <h2
+            id="team-heading"
+            className="text-3xl sm:text-4xl font-bold text-center text-gray-800 mb-10 sm:mb-14"
+          >
+            Meet Our Team
+          </h2>
+        </FadeInWhenVisible>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        {/* Animate the grid of team member cards with a staggered effect */}
+        <StaggeredReveal className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {TEAM_MEMBERS.map((member, index) => (
             <article
               key={index}
@@ -176,8 +182,6 @@ const Team = () => {
               aria-label={`Team member: ${member.name}, ${member.title}`}
             >
               <div className="relative w-36 h-36 mb-6">
-                {" "}
-                {/* Container for circular image */}
                 <Image
                   src={member.image}
                   alt={member.alt}
@@ -219,7 +223,6 @@ const Team = () => {
               )}
 
               <div className="flex space-x-4 mt-auto">
-                {" "}
                 {/* mt-auto pushes social icons to bottom */}
                 {member.socialLinks.map((social, socialIndex) => {
                   const Icon = social.icon;
@@ -239,7 +242,7 @@ const Team = () => {
               </div>
             </article>
           ))}
-        </div>
+        </StaggeredReveal>
       </div>
     </section>
   );
