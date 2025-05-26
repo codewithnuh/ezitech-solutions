@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import Header from "@/components/globals/Header";
-import { Oswald } from "next/font/google";
+import { Oswald, Roboto } from "next/font/google";
 import Footer from "@/components/globals/Footer";
 import { ThemeProvider } from "@/components/theme-provider";
 import "highlight.js/styles/rainbow.css"; // Ensure this path is correct and the file exists
@@ -10,6 +10,11 @@ const oswald = Oswald({
   weight: ["200", "400", "500", "600", "700"],
   variable: "--font-oswald",
   subsets: ["cyrillic"],
+});
+const roboto = Roboto({
+  weight: ["200", "300", "400"],
+  variable: "--font-roboto",
+  subsets: ["latin"],
 });
 
 export const metadata: Metadata = {
@@ -103,7 +108,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${oswald.variable} antialiased`}>
+      <body className={`${oswald.variable} ${roboto.variable} antialiased`}>
         <Header />
         <ThemeProvider
           attribute="class"

@@ -7,14 +7,14 @@ const Hero = () => {
   return (
     <section
       id="home"
-      className="relative bg-[url('/assets/banner.jpg')] bg-cover bg-center min-h-[60vh] sm:min-h-[70vh] md:min-h-[80vh] flex items-center justify-center pt-10" //
+      className="relative bg-[url('/assets/banner.jpg')] bg-cover bg-center min-h-[60vh] sm:min-h-[70vh] md:min-h-[100vh] flex items-center justify-center pt-10" //
     >
-      <div className="absolute inset-0 bg-black/60"></div>{" "}
+      <div className="absolute inset-0 bg-gray-950/85"></div>{" "}
       <div className="relative z-10 container mx-auto px-4 py-20 space-y-5 text-center">
         {" "}
         <FadeInWhenVisible
           children={
-            <h1 className="text-4xl sm:text-5xl md:text-6xl text-white capitalize font-bold">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl text-white capitalize font-[400]">
               {" "}
               {HERO_CONTENT.title}
             </h1>
@@ -38,7 +38,7 @@ const Hero = () => {
           {" "}
           <FadeInWhenVisible
             children={
-              <Button className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold py-3 px-8 rounded-lg text-lg transition duration-300">
+              <Button className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold  text-lg transition duration-300">
                 {HERO_CONTENT.cta}
               </Button>
             }

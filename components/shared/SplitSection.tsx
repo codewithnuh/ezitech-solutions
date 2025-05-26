@@ -64,7 +64,7 @@ const SplitSection: React.FC<SplitSectionProps> = ({
           <FadeInWhenVisible delay={0.3} yOffset={30}>
             {" "}
             {/* Animate the title */}
-            <h3 className="text-2xl sm:text-3xl font-semibold text-secondary mb-4 sm:mb-6 leading-tight">
+            <h3 className="text-2xl sm:text-3xl font-[400] text-secondary mb-4 sm:mb-6 leading-tight">
               {title}
             </h3>
           </FadeInWhenVisible>

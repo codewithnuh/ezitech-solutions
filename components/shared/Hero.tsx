@@ -26,6 +26,8 @@ const Hero: React.FC<HeroProps> = ({ backgroundImage }) => {
         return "career"; // Added for completeness
       case "/gallery":
         return "Gallery"; // Added for completeness
+      case "/portfolio/database-management":
+        return "Database-management"; // Added for completeness
       default:
         return "Home";
     }
@@ -63,7 +65,12 @@ const Hero: React.FC<HeroProps> = ({ backgroundImage }) => {
           </div>
         </div>
       </div>
-      <div className="bg-primary py-6 sm:py-8">
+
+      <div
+        className={`bg-primary py-6 sm:py-8 ${
+          pathname == "/portfolio/database-management" ? "hidden" : ""
+        }`}
+      >
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col sm:flex-row justify-between items-center text-center sm:text-left gap-4">
             <h2

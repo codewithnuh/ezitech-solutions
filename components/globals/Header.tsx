@@ -121,7 +121,7 @@ const Header = () => {
                 >
                   <Link // Changed from Button to Link for semantic correctness in navigation
                     href="#"
-                    className="relative flex items-center text-lg font-medium hover:text-primary transition-colors duration-200 focus:outline-none
+                    className="relative flex items-center text-lg font-[400] hover:text-primary transition-colors duration-200 focus:outline-none
                                after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-primary after:transition-all after:duration-300 group-hover:after:w-full"
                     aria-expanded={isMobilePagesDropdownOpen}
                     aria-haspopup="menu"
@@ -162,7 +162,7 @@ const Header = () => {
                 <li key={link.href} className="flex" role="none">
                   <Link
                     href={link.href}
-                    className="relative text-lg font-medium hover:text-primary transition-colors duration-200
+                    className="relative text-lg font-[400] hover:text-primary transition-colors duration-200
                                after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-primary after:transition-all after:duration-300 hover:after:w-full"
                     aria-current={pathname === link.href ? "page" : undefined}
                     role="menuitem"

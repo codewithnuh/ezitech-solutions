@@ -196,7 +196,7 @@ const Team = () => {
               <h3 className="text-xl font-semibold text-gray-800 group-hover:text-white transition-colors duration-300 mb-1">
                 {member.name}
               </h3>
-              <p className="text-gray-600 group-hover:text-white transition-colors duration-300 text-sm mb-3">
+              <p className="text-gray-600 group-hover:text-white transition-colors duration-300 text-sm mb-1">
                 {member.title}
               </p>
               {member.contact && (

@@ -118,7 +118,23 @@
   }
   body {
     @apply bg-background text-foreground;
+  }
+  h1,
+  h2,
+  h3,
+  button {
     font-family: var(--font-oswald);
+  }
+  h1 {
+    @apply font-[400]!;
+  }
+  p {
+    @apply font-[300]!;
+    font-family: var(--font-roboto);
+  }
+  h2,
+  h3 {
+    @apply font-[400]!;
   }
   code,
   pre {

@@ -11,7 +11,7 @@ const WORKS_CONTENT = [
     title: "Cloud Service",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    linkHref: "/works/cloud-service",
+    linkHref: "/portfolio/cloud-service",
   },
   {
     logoSrc: "/assets/portfolio-2.png", // Placeholder for BADU logo
@@ -19,7 +19,7 @@ const WORKS_CONTENT = [
     title: "Database Management",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    linkHref: "/works/database-management",
+    linkHref: "/portfolio/database-management",
   },
   {
     logoSrc: "/assets/portfolio-3.png", // Placeholder for PixTeller logo
@@ -27,7 +27,7 @@ const WORKS_CONTENT = [
     title: "Logo Design",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    linkHref: "/works/logo-design",
+    linkHref: "/portfolio/logo-design",
   },
   {
     logoSrc: "/assets/portfolio-4.png", // Placeholder for Intel logo
@@ -35,7 +35,7 @@ const WORKS_CONTENT = [
     title: "Photoshop Design",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    linkHref: "/works/photoshop-design",
+    linkHref: "/portfolio/photoshop-design",
   },
   {
     logoSrc: "/assets/portfolio-5.png", // Placeholder for Skype logo
@@ -43,7 +43,7 @@ const WORKS_CONTENT = [
     title: "Web Development",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    linkHref: "/works/web-development",
+    linkHref: "/portfolio/web-development",
   },
   {
     logoSrc: "/assets/portfolio-6.png", // Placeholder for Workday logo
@@ -51,7 +51,7 @@ const WORKS_CONTENT = [
     title: "Web Hosting",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    linkHref: "/works/web-hosting",
+    linkHref: "/portfolio/web-hosting",
   },
 ];
 
