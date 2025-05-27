@@ -4,7 +4,7 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import { FadeInWhenVisible } from "@/components/shared/Motion"; // Import the reusable animation component
+import { FadeInWhenVisible } from "@/components/shared/Motion";
 
 interface SplitSectionProps {
   imageSrc: string;
@@ -25,32 +25,41 @@ const SplitSection: React.FC<SplitSectionProps> = ({
   ctaLink,
   reverse = false,
 }) => {
+  // Define the background style using linear-gradient for a perfect 50/50 split
+  // The colors are swapped based on the 'reverse' prop
+  const imageSideBackgroundStyle = {
+    background: reverse
+      ? "linear-gradient(to right, white 60%, var(--secondary) 70%)" // White on left, secondary on right
+      : "linear-gradient(to right, var(--secondary) 70%, white 60%)", // Secondary on left, white on right
+  };
+
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-0 px-4p">
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-0 overflow-hidden">
       {/* Image Side */}
       <div
-        className={`bg-secondary relative ${
-          reverse ? "order-2 md:order-2" : "order-1 md:order-1"
-        }`}
+        className={`relative flex items-center py-7 sm:py-10 lg:py-14
+          ${reverse ? "order-2 md:order-2" : "order-1 md:order-1"}
+          `}
+        style={imageSideBackgroundStyle}
       >
-        {/* The decorative white div is likely a design element, keeping it for visual consistency */}
-        <div className="h-full w-28 bg-white absolute left-126" />
-        <div className="container relative z-10 px-4 mx-auto flex justify-center items-center py-7 sm:py-10 lg:py-14">
-          <div className="px-4 sm:px-6 lg:px-8">
-            <FadeInWhenVisible delay={0.2} yOffset={50}>
-              {" "}
-              {/* Animate the image */}
-              <Image
-                src={imageSrc}
-                width={500}
-                height={500}
-                alt={imageAlt}
-                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 500px"
-                loading="lazy"
-                className="w-full h-auto object-cover rounded-lg shadow-lg"
-              />
-            </FadeInWhenVisible>
-          </div>
+        <div
+          className={`container mx-auto px-4 sm:px-6 lg:px-8 flex w-full
+          ${
+            reverse ? "justify-end" : "justify-start"
+          } // Align content within the container
+        `}
+        >
+          <FadeInWhenVisible delay={0.2} yOffset={50}>
+            <Image
+              src={imageSrc}
+              width={500}
+              height={500}
+              alt={imageAlt}
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 500px"
+              loading="lazy"
+              className="w-full h-auto object-cover rounded-lg shadow-lg max-w-[80%] md:max-w-[600px]" // Constrain image size
+            />
+          </FadeInWhenVisible>
         </div>
       </div>
 
@@ -60,26 +69,21 @@ const SplitSection: React.FC<SplitSectionProps> = ({
           reverse ? "order-1 md:order-1" : "order-2 md:order-2"
         }`}
       >
+        {/* This div already correctly uses container mx-auto px-4 sm:px-6 lg:px-8 */}
         <div className="container mx-auto text-left flex flex-col items-start justify-center px-4 sm:px-6 lg:px-8">
           <FadeInWhenVisible delay={0.3} yOffset={30}>
-            {" "}
-            {/* Animate the title */}
             <h3 className="text-2xl sm:text-3xl font-[400] text-secondary mb-4 sm:mb-6 leading-tight">
               {title}
             </h3>
           </FadeInWhenVisible>
 
           <FadeInWhenVisible delay={0.4} yOffset={30}>
-            {" "}
-            {/* Animate the first paragraph */}
             <p className="text-gray-700 text-base sm:text-lg mb-4 leading-relaxed">
               {paragraph.slice(0, 180)}
             </p>
           </FadeInWhenVisible>
 
           <FadeInWhenVisible delay={0.5} yOffset={30}>
-            {" "}
-            {/* Animate the second paragraph */}
             <p className="text-gray-700 text-base sm:text-lg mb-6 leading-relaxed">
               {paragraph.slice(180)}
             </p>
@@ -87,8 +91,6 @@ const SplitSection: React.FC<SplitSectionProps> = ({
 
           {ctaLink || ctaText ? (
             <FadeInWhenVisible delay={0.6} yOffset={30}>
-              {" "}
-              {/* Animate the CTA button */}
               <Link href={ctaLink as string} passHref>
                 <Button className="w-full sm:w-auto px-6 py-3 text-lg font-medium">
                   {ctaText}

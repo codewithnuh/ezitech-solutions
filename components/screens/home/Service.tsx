@@ -22,7 +22,7 @@ const Services = () => {
         </FadeInWhenVisible>
 
         {/* Animate the grid of service cards with a staggered effect */}
-        <StaggeredReveal className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <StaggeredReveal className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-16 sm:gap-8 ">
           {SERVICES_CONTENT.map((service, index) => {
             const IconComponent = service.icon; // Get the Lucide icon component
 

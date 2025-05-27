@@ -23,7 +23,7 @@ const Testimonials = () => {
         </FadeInWhenVisible>
 
         {/* Animate the grid of testimonials with a staggered effect */}
-        <StaggeredReveal className="grid grid-cols-1 py-10 md:grid-cols-2 lg:grid-cols-3 sm:gap-3">
+        <StaggeredReveal className="grid grid-cols-1 py-10 md:grid-cols-2 lg:grid-cols-3 sm:gap-6 gap-5">
           {TESTIMONIALS.map((testimonial, index) => (
             <div className="relative mb-10" key={index}>
               <article

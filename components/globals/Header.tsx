@@ -23,12 +23,14 @@ interface NavLink {
 const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [showBgColor, setShowBgColor] = useState(false);
   const [isMobilePagesDropdownOpen, setIsMobilePagesDropdownOpen] =
     useState(false); // Separate state for mobile Pages dropdown
   const pathname = usePathname();
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
+    setShowBgColor(!showBgColor);
     // When opening/closing the main mobile menu, also close the pages dropdown
     if (isMobilePagesDropdownOpen) {
       setIsMobilePagesDropdownOpen(false);
@@ -177,7 +179,7 @@ const Header = () => {
           <Button className="hidden sm:block">Get Quote</Button>
 
           {/* Mobile Menu Toggle Button */}
-          <button
+          <Button
             className="sm:hidden p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-white"
             onClick={toggleMobileMenu}
             aria-label={
@@ -193,14 +195,16 @@ const Header = () => {
             ) : (
               <MenuIcon size={24} className="text-white" aria-hidden="true" />
             )}
-          </button>
+          </Button>
         </nav>
 
         {/* Mobile Nav Menu */}
         {/* Added max-h-0 and max-h-screen for animated slide down */}
         <div
           id="mobile-nav-menu"
-          className={`absolute top-full left-0 right-0 bg-secondary shadow-lg py-4 sm:hidden overflow-hidden
+          className={`absolute top-full left-0 right-0 ${
+            isScrolled || showBgColor ? "bg-secondary" : ""
+          } shadow-lg py-4 sm:hidden overflow-hidden
                       transition-all duration-300 ease-in-out ${
                         isMobileMenuOpen ? "max-h-screen" : "max-h-0"
                       }`}
@@ -213,7 +217,7 @@ const Header = () => {
               <li key={link.href} role="none">
                 {link.isDropdown ? (
                   <>
-                    <button
+                    <Button
                       className="flex items-center justify-between w-full text-left text-lg font-medium py-2 hover:text-primary transition-colors duration-200"
                       onClick={toggleMobilePagesDropdown}
                       aria-expanded={isMobilePagesDropdownOpen}
@@ -230,7 +234,7 @@ const Header = () => {
                         }`}
                         aria-hidden="true"
                       />
-                    </button>
+                    </Button>
                     {/* Mobile dropdown content, also animated */}
                     <ul
                       id={`mobile-dropdown-${link.label.toLowerCase()}`}
