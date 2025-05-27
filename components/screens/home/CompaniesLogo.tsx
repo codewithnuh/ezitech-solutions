@@ -15,27 +15,27 @@ import Autoplay from "embla-carousel-autoplay";
 const COMPANY_LOGOS = [
   {
     name: "Airbnb",
-    logo: "/assets/logo.jpg",
+    logo: "/assets/clients-logo-1.png",
     alt: "Airbnb logo",
   },
   {
     name: "Hugo",
-    logo: "/assets/logo.jpg",
+    logo: "/assets/clients-logo-2.png",
     alt: "Hugo logo",
   },
   {
     name: "NGINX",
-    logo: "/assets/logo.jpg",
+    logo: "/assets/clients-logo-3.png",
     alt: "NGINX logo",
   },
   {
     name: "Google",
-    logo: "/assets/logo.jpg",
+    logo: "/assets/clients-logo-4.png",
     alt: "Google logo",
   },
   {
     name: "Microsoft",
-    logo: "/assets/logo.jpg",
+    logo: "/assets/clients-logo-5.png",
     alt: "Microsoft logo",
   },
 ];
