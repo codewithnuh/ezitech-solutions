@@ -27,13 +27,34 @@ const Testimonials = () => {
           {TESTIMONIALS.map((testimonial, index) => (
             <div className="relative mb-10" key={index}>
               <article
-                className="relative border h-60 px-6 bg-white border-gray-400 border-b-0 hover:bg-secondary group transition-all duration-500 ease-in-out p-8 pb-16 rounded-lg flex flex-col items-start text-left"
+                className="relative border h-60 px-6 bg-white border-gray-400 border-b-0 rounded-lg flex flex-col items-start text-left overflow-hidden group" // Added overflow-hidden and group
                 aria-label={`Testimonial from ${testimonial.name}`}
               >
-                <p className="text-secondary group-hover:text-white text-base sm:text-lg leading-relaxed mb-8">
-                  {testimonial.quote}
-                </p>
+                {/* Diagonal background layer that appears on hover */}
+                <div
+                  className={`absolute inset-0 bg-secondary transform origin-top-left
+                               opacity-0 group-hover:opacity-100 transition-all duration-500 ease-in-out`} // Applied skew-y-3 for diagonal
+                  style={{
+                    clipPath:
+                      "polygon(0px 0px, 100% 0px, 100% 100%, -1px 80.87%)",
+                  }} // Diagonal clip path for top-left to bottom-right
+                ></div>
+
+                {/* Content of the testimonial card - ensure it's above the diagonal layer */}
+                <div className="relative z-10 p-8 pb-16 flex flex-col items-start text-left h-full">
+                  <p className="text-secondary group-hover:text-white text-base sm:text-lg leading-relaxed mb-8">
+                    {testimonial.quote}
+                  </p>
+                </div>
+
+                {/* Speech bubble triangle - its color also changes on hover */}
+                <div
+                  className={`absolute bottom-0 left-6 w-0 h-0 border-l-[15px] border-r-[15px] border-t-[15px]
+                              border-l-transparent border-r-transparent border-t-white translate-y-[15px]
+                              group-hover:border-t-secondary transition-colors duration-500`} // Triangle color changes on hover
+                ></div>
               </article>
+              {/* Avatar and Name section, positioned relative to the parent div for consistent placement */}
               <div className="absolute p-2 rounded-md -bottom-10 w-[75%] left-10 flex bg-white ml-2 items-center">
                 <Image
                   src={testimonial.avatar}
